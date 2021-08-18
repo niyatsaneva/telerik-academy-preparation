@@ -1,0 +1,20 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Game {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] stringList = scanner.nextLine().split("");
+        ArrayList<Integer> number = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            number.add(Integer.valueOf(stringList[i]));
+        }
+        int number1 = number.get(0) + number.get(1) + number.get(2);
+        int number2 = number.get(0) * number.get(1) * number.get(2);
+        int number3 = number.get(0) * number.get(1) + number.get(2);
+        int number4 = number.get(0) + number.get(1) * number.get(2);
+        System.out.println(Math.max(Math.max(number1, number2), Math.max(number3, number4)));
+    }
+}
