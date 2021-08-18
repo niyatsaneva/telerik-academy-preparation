@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArraySearch2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] input = scanner.nextLine().split(",");
+        ArrayList<String> result = new ArrayList<>();
+        int n = input.length;
+        for (int k = 1; k <= n; k++) {
+            while (!Arrays.asList(input).contains(String.valueOf(k))) {
+                result.add(String.valueOf(k));
+                break;
+            }
+        }
+        System.out.println ((result).toString().replace((", "), ",").replace("[", "").replace("]", ""));
+    }
+}
